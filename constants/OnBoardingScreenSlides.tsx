@@ -13,7 +13,7 @@ const OnBoardingScreenSlides: SlideInterface[] = [
     description:
       "Descoperă noua aplicație, design modern și interfață simplă, perfect pentru clienții noștri!",
     animation: null,
-    image: require('../assets/images/AppLogo.png'),
+    image: null,
   },
   {
     id: 2,
@@ -22,7 +22,6 @@ const OnBoardingScreenSlides: SlideInterface[] = [
       "Acum poți plăti rapid și ușor cu cardul direct din aplicația Hazzard!",
     animation: require("../assets/animations/ApplePayAnimation.json"),
     image: null,
-
   },
   {
     id: 3,
@@ -31,7 +30,6 @@ const OnBoardingScreenSlides: SlideInterface[] = [
       "Ai posibilitatea să-ți creezi un cont sau să te autentifici cu Apple sau Google si sa poți vedea istoricul tunsorilor tale!",
     animation: require("../assets/animations/LoginAnimation.json"),
     image: null,
-
   },
 ];
 

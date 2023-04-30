@@ -1,0 +1,3 @@
+1) style the email / password input
+2)Make the keyboardavoidingview work
+3)Make a no opacity toucahable view to dismiss keyboard (whole view)

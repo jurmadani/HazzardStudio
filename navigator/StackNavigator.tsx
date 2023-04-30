@@ -11,14 +11,17 @@ export type StackParams = {
 
 const Stack = createNativeStackNavigator<StackParams>();
 
-const StackNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
+/* DEACTIVATED SCREEN 
+  <Stack.Screen
         name="Splashscreen"
         component={SplashScreen}
         options={{ headerShown: false }}
       />
+*/
+
+const StackNavigator = () => {
+  return (
+    <Stack.Navigator>
       <Stack.Screen
         name="Onboarding"
         component={OnboardingScreen}
@@ -26,6 +29,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen
         name="Login"
+        //@ts-expect-error
         component={LoginScreen}
         options={{ headerShown: false, gestureEnabled: false }}
       />
