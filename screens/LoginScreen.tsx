@@ -5,7 +5,6 @@ import {
   Text,
   SafeAreaView,
   KeyboardAvoidingView,
-  Platform,
   TouchableWithoutFeedback,
   Keyboard,
   TouchableOpacity,
@@ -20,7 +19,7 @@ import Checkbox from "../components/Checkbox";
 import LoginButton from "../components/LoginButton";
 import SauDivider from "../components/SauDivider";
 import GoogleButton from "../components/GoogleButton";
-import FacebookButton from "../components/FacebookButton";
+import AppleButton from "../components/AppleButton";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -158,9 +157,10 @@ const LoginScreen = () => {
                 }}
               >
                 <GoogleButton />
-                <FacebookButton />
+                <AppleButton />
               </View>
             </View>
+            {/* Nu ai cont text */}
             <View
               style={{
                 flexDirection: "row",
@@ -182,7 +182,6 @@ const LoginScreen = () => {
               </TouchableOpacity>
             </View>
           </KeyboardAvoidingView>
-          {/* Nu ai cont text */}
         </SafeAreaView>
       </TouchableWithoutFeedback>
     );
