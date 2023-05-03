@@ -2,12 +2,15 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { CheckBox } from "@ui-kitten/components";
 import { Dimensions } from "react-native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParams } from "../navigator/StackNavigator";
 
 interface CheckboxComponentProps {
   checked: boolean;
   setChecked: React.Dispatch<React.SetStateAction<boolean>>;
   message: string;
   navigationText?: string;
+  navigation?: NativeStackNavigationProp<StackParams>;
 }
 
 const Checkbox = ({
@@ -15,6 +18,7 @@ const Checkbox = ({
   setChecked,
   message,
   navigationText,
+  navigation,
 }: CheckboxComponentProps) => {
   const windowWidth = Dimensions.get("window").width;
 
@@ -32,7 +36,10 @@ const Checkbox = ({
         onChange={(nextChecked) => setChecked(nextChecked)}
       />
       <Text style={{ marginLeft: 10, color: "white" }}>{message}</Text>
-      <TouchableOpacity style={{ flex: 1 }}>
+      <TouchableOpacity
+        style={{ flex: 1 }}
+        onPress={() => navigation?.navigate("ForgotPassword")}
+      >
         <Text
           style={{
             textAlign: "right",

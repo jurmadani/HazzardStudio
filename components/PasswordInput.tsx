@@ -57,7 +57,7 @@ const PasswordInput = ({
         value={value}
         onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
-        textStyle={{ fontSize: 15,color:'white' }}
+        textStyle={{ fontSize: 15, color: "white" }}
         style={{
           width: windowWidth - 90,
           borderWidth: 0,
@@ -66,7 +66,6 @@ const PasswordInput = ({
         placeholderTextColor={"white"}
         accessoryLeft={PasswordIcon}
         accessoryRight={EyeIcon}
-        
       />
     </View>
   );

@@ -3,12 +3,14 @@ import SplashScreen from "../screens/SplashScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
+import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 
 export type StackParams = {
   Splashscreen: any;
   Onboarding: any;
   Login: any;
   Register: any;
+  ForgotPassword: any;
 };
 
 const Stack = createNativeStackNavigator<StackParams>();
@@ -38,6 +40,11 @@ const StackNavigator = () => {
       <Stack.Screen
         name="Register"
         component={RegisterScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ForgotPassword"
+        component={ForgotPasswordScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

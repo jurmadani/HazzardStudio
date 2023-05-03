@@ -1,2 +1,2 @@
 2)Add Logic to the Login screen for the buttons, implement redux from now on.
-3)Make other designs after that
+3)Make other designs after that 

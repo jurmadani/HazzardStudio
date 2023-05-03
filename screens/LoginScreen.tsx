@@ -154,6 +154,7 @@ const LoginScreen = () => {
                 setChecked={setChecked}
                 message="Remember me"
                 navigationText="Ai uitat parola?"
+                navigation={navigation}
               />
               {/* Login button */}
               <GreyButton placeholder="Conecteaza-te"/>
