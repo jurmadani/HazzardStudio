@@ -1,7 +1,11 @@
 import { View, TouchableOpacity, Dimensions, Text } from "react-native";
 import React from "react";
 
-const LoginButton = () => {
+interface ButtonProps {
+  placeholder: string;
+}
+
+const GreyButton = ({ placeholder }: ButtonProps) => {
   const windowWidth = Dimensions.get("window").width;
   return (
     <View style={{ marginTop: 25 }}>
@@ -22,7 +26,7 @@ const LoginButton = () => {
           }}
         >
           <Text style={{ color: "white", fontWeight: "700" }}>
-            Conecteaza-te
+            {placeholder}
           </Text>
         </View>
       </TouchableOpacity>
@@ -30,4 +34,4 @@ const LoginButton = () => {
   );
 };
 
-export default LoginButton;
+export default GreyButton;

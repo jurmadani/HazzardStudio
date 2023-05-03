@@ -6,9 +6,16 @@ import { Dimensions } from "react-native";
 interface CheckboxComponentProps {
   checked: boolean;
   setChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  message: string;
+  navigationText?: string;
 }
 
-const Checkbox = ({ checked, setChecked }: CheckboxComponentProps) => {
+const Checkbox = ({
+  checked,
+  setChecked,
+  message,
+  navigationText,
+}: CheckboxComponentProps) => {
   const windowWidth = Dimensions.get("window").width;
 
   return (
@@ -24,19 +31,19 @@ const Checkbox = ({ checked, setChecked }: CheckboxComponentProps) => {
         checked={checked}
         onChange={(nextChecked) => setChecked(nextChecked)}
       />
-      <Text style={{ marginLeft: 10, color: "white" }}>Remember me</Text>
-        <TouchableOpacity style={{ flex: 1 }}>
-          <Text
-            style={{
-              textAlign: "right",
-              marginRight: windowWidth - (windowWidth - 15),
-              color: "#FC6D5B",
-              fontWeight: "600",
-            }}
-          >
-            Ai uitat parola?
-          </Text>
-        </TouchableOpacity>
+      <Text style={{ marginLeft: 10, color: "white" }}>{message}</Text>
+      <TouchableOpacity style={{ flex: 1 }}>
+        <Text
+          style={{
+            textAlign: "right",
+            marginRight: windowWidth - (windowWidth - 15),
+            color: "#FC6D5B",
+            fontWeight: "600",
+          }}
+        >
+          {navigationText}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };

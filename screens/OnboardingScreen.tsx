@@ -50,7 +50,7 @@ const OnBoardingScreen_v2: React.FC = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../assets/images/Nirvana_BG_2023-01-08_15.43.png")}
+        source={require("../assets/images/Onboarding-Background-2.png")}
         style={{ height: windowHeight, width: windowWidth }}
       >
         <FlatList

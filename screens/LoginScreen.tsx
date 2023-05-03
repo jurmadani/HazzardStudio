@@ -16,10 +16,13 @@ import { useFonts } from "expo-font";
 import EmailInput from "../components/EmailInput";
 import PasswordInput from "../components/PasswordInput";
 import Checkbox from "../components/Checkbox";
-import LoginButton from "../components/LoginButton";
+import GreyButton from "../components/GreyButton";
 import SauDivider from "../components/SauDivider";
 import GoogleButton from "../components/GoogleButton";
 import AppleButton from "../components/AppleButton";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParams } from "../navigator/StackNavigator";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -36,6 +39,8 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [checked, setChecked] = React.useState(false);
+  const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
+
   if (fontsLoaded)
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -144,9 +149,14 @@ const LoginScreen = () => {
                 setSecureTextEntry={setSecureTextEntry}
               />
               {/* Checkbox cu remember me */}
-              <Checkbox checked={checked} setChecked={setChecked} />
+              <Checkbox
+                checked={checked}
+                setChecked={setChecked}
+                message="Remember me"
+                navigationText="Ai uitat parola?"
+              />
               {/* Login button */}
-              <LoginButton />
+              <GreyButton placeholder="Conecteaza-te"/>
               {/* Sau divider */}
               <SauDivider />
               {/* Facebook & Google login view */}
@@ -169,7 +179,7 @@ const LoginScreen = () => {
               }}
             >
               <Text style={{ color: "white" }}>Nu ai cont?</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Register")}>
                 <Text
                   style={{
                     color: "#F2613C",

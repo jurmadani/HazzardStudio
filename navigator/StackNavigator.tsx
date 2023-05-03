@@ -2,11 +2,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "../screens/SplashScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
+import RegisterScreen from "../screens/RegisterScreen";
 
 export type StackParams = {
   Splashscreen: any;
   Onboarding: any;
   Login: any;
+  Register: any;
 };
 
 const Stack = createNativeStackNavigator<StackParams>();
@@ -32,6 +34,11 @@ const StackNavigator = () => {
         //@ts-expect-error
         component={LoginScreen}
         options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

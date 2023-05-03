@@ -1,3 +1,2 @@
-1) style the email / password input
-2)Make the keyboardavoidingview work
-3)Make a no opacity toucahable view to dismiss keyboard (whole view)
+2)Add Logic to the Login screen for the buttons, implement redux from now on.
+3)Make other designs after that
