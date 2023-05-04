@@ -1,15 +1,21 @@
 import { View, TouchableOpacity, Dimensions, Text } from "react-native";
 import React from "react";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParams } from "../navigator/StackNavigator";
 
 interface ButtonProps {
   placeholder: string;
+  navigation?: NativeStackNavigationProp<StackParams>;
 }
 
-const GreyButton = ({ placeholder }: ButtonProps) => {
+const GreyButton = ({ placeholder, navigation }: ButtonProps) => {
   const windowWidth = Dimensions.get("window").width;
   return (
     <View style={{ marginTop: 25 }}>
-      <TouchableOpacity style={{ alignItems: "center" }}>
+      <TouchableOpacity
+        style={{ alignItems: "center" }}
+        onPress={() => navigation?.navigate("Drawer")}
+      >
         <View
           style={{
             width: windowWidth - 125,

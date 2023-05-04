@@ -4,6 +4,8 @@ import OnboardingScreen from "../screens/OnboardingScreen";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
+import HomeScreen from "../screens/HomeScreen";
+import DrawerNavigator from "./DrawerNavigator";
 
 export type StackParams = {
   Splashscreen: any;
@@ -11,6 +13,7 @@ export type StackParams = {
   Login: any;
   Register: any;
   ForgotPassword: any;
+  Drawer: any;
 };
 
 const Stack = createNativeStackNavigator<StackParams>();
@@ -21,12 +24,7 @@ const Stack = createNativeStackNavigator<StackParams>();
         component={SplashScreen}
         options={{ headerShown: false }}
       />
-*/
-
-const StackNavigator = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
+       <Stack.Screen
         name="Onboarding"
         component={OnboardingScreen}
         options={{ headerShown: false, gestureEnabled: false }}
@@ -46,6 +44,16 @@ const StackNavigator = () => {
         name="ForgotPassword"
         component={ForgotPasswordScreen}
         options={{ headerShown: false }}
+      />
+*/
+
+const StackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Drawer"
+        component={DrawerNavigator}
+        options={{ headerShown: false, gestureEnabled: false }}
       />
     </Stack.Navigator>
   );
