@@ -14,7 +14,11 @@ interface DrawerProps {
 const DrawerHeader = ({ navigation }: DrawerProps) => {
   return (
     <SafeAreaView
-      style={{ margin: 20, flexDirection: "row", alignItems: "center" }}
+      style={{
+        margin: 20,
+        flexDirection: "row",
+        alignItems: "center",
+      }}
     >
       <TouchableOpacity onPress={() => navigation.navigation.toggleDrawer()}>
         <MenuIcon />

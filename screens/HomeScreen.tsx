@@ -1,14 +1,36 @@
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView, ScrollView, Text, Dimensions } from "react-native";
 import React from "react";
-//@ts-expect-error
-import Ionicons from "react-native-vector-icons/Ionicons";
 
-const MenuIcon = () => <Ionicons name="menu-outline" size={40} color="black" />;
+import { Searchbar } from "react-native-paper";
+import DiscountCard from "../components/DiscountCard";
+import ServiciileNoastre from "../components/ServiciileNoastre";
+import EchipaNoastra from "../components/EchipaNoastra";
+
+const windowWidth = Dimensions.get("window").width;
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={{ backgroundColor: "white", flex: 1 }}>
-      <SafeAreaView>{/* Header text: the welcome user */}</SafeAreaView>
+    <ScrollView
+      style={{ flex: 1 }}
+      showsVerticalScrollIndicator={false}
+      bounces={false}
+    >
+      <SafeAreaView style={{ alignItems: "center" }}>
+        {/* Search bar pentru frizeri */}
+        {/* @ts-expect-error  */}
+        <Searchbar
+          placeholder="Cauta frizer"
+          style={{ backgroundColor: "#C8C8C8", width: windowWidth - 50 }}
+          elevation={2}
+        />
+        <DiscountCard
+          title="5% pentru clientii noi"
+          description="discount valabil doar 2 zile"
+          buttonTitle="Programeaza-te"
+        />
+        <ServiciileNoastre />
+        <EchipaNoastra />
+      </SafeAreaView>
     </ScrollView>
   );
 };

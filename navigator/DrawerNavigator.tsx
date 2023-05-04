@@ -15,7 +15,6 @@ const DrawerNavigator = () => {
       drawerContent={DrawerContent}
       screenOptions={{
         header: (navigation) => <DrawerHeader navigation={navigation} />,
-        headerTransparent: true,
       }}
     >
       <Drawer.Screen name="Home" component={HomeScreen} />
