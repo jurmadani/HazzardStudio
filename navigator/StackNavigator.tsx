@@ -6,6 +6,7 @@ import RegisterScreen from "../screens/RegisterScreen";
 import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import HomeScreen from "../screens/HomeScreen";
 import DrawerNavigator from "./DrawerNavigator";
+import FrizerDetaliiScreen from "../screens/FrizerDetaliiScreen";
 
 export type StackParams = {
   Splashscreen: any;
@@ -14,6 +15,7 @@ export type StackParams = {
   Register: any;
   ForgotPassword: any;
   Drawer: any;
+  Details: any;
 };
 
 const Stack = createNativeStackNavigator<StackParams>();
@@ -54,6 +56,14 @@ const StackNavigator = () => {
         name="Drawer"
         component={DrawerNavigator}
         options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={FrizerDetaliiScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: "",
+        }}
       />
     </Stack.Navigator>
   );

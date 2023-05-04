@@ -6,9 +6,18 @@ import { StackParams } from "../navigator/StackNavigator";
 interface ButtonProps {
   placeholder: string;
   navigation?: NativeStackNavigationProp<StackParams>;
+  placeholderSize?: number;
+  radius?: number;
+  buttonWidth?: number;
 }
 
-const GreyButton = ({ placeholder, navigation }: ButtonProps) => {
+const GreyButton = ({
+  placeholder,
+  navigation,
+  placeholderSize,
+  radius,
+  buttonWidth,
+}: ButtonProps) => {
   const windowWidth = Dimensions.get("window").width;
   return (
     <View style={{ marginTop: 25 }}>
@@ -18,11 +27,11 @@ const GreyButton = ({ placeholder, navigation }: ButtonProps) => {
       >
         <View
           style={{
-            width: windowWidth - 125,
+            width: buttonWidth ? buttonWidth : windowWidth - 125,
             height: 52,
             backgroundColor: "#ACACAC",
             borderWidth: 0,
-            borderRadius: 10,
+            borderRadius: radius ? radius : 10,
             shadowColor: "black",
             shadowOffset: { width: 1, height: 3 },
             shadowOpacity: 0.2,
@@ -31,7 +40,13 @@ const GreyButton = ({ placeholder, navigation }: ButtonProps) => {
             justifyContent: "center",
           }}
         >
-          <Text style={{ color: "white", fontWeight: "700" }}>
+          <Text
+            style={{
+              color: "white",
+              fontWeight: "700",
+              fontSize: placeholderSize,
+            }}
+          >
             {placeholder}
           </Text>
         </View>

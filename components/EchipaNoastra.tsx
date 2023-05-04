@@ -9,8 +9,14 @@ import {
 import React from "react";
 import { Echipa } from "../data/EchipaData";
 import { BlurView } from "expo-blur";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParams } from "../navigator/StackNavigator";
 
 const EchipaNoastra = () => {
+
+  const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
+
   return (
     <View style={{ alignSelf: "flex-start", marginTop: 20 }}>
       {/* Header text */}
@@ -23,7 +29,7 @@ const EchipaNoastra = () => {
         numColumns={2}
         data={Echipa}
         renderItem={(item) => (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Details')}>
             <View
               style={{
                 height: 180,

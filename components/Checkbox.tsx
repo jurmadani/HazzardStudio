@@ -13,6 +13,7 @@ interface CheckboxComponentProps {
   navigation?: NativeStackNavigationProp<StackParams>;
 }
 
+
 const Checkbox = ({
   checked,
   setChecked,

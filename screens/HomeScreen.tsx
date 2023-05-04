@@ -1,14 +1,15 @@
 import { SafeAreaView, ScrollView, Text, Dimensions } from "react-native";
 import React from "react";
-
 import { Searchbar } from "react-native-paper";
 import DiscountCard from "../components/DiscountCard";
 import ServiciileNoastre from "../components/ServiciileNoastre";
 import EchipaNoastra from "../components/EchipaNoastra";
 
+
 const windowWidth = Dimensions.get("window").width;
 
 const HomeScreen = () => {
+
   return (
     <ScrollView
       style={{ flex: 1 }}

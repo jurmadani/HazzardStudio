@@ -1,12 +1,21 @@
-export const Servicii = [
+interface ServiciiProps {
+    id: number;
+    NumeServiciu: string;
+    pret?: number;
+    Icon: any;
+}[]
+
+export const Servicii: ServiciiProps[] = [
     {
         id: 1,
         NumeServiciu: "Tuns",
+        pret: 80,
         Icon: require('../assets/images/TunsIcon.png')
     },
     {
         id: 2,
-        NumeServiciu: "Barba",
+        NumeServiciu: "Tuns + barba",
+        pret: 95,
         Icon: require('../assets/images/BarbaIcon.png')
     },
     {
