@@ -7,19 +7,22 @@ import { StackParams } from "../navigator/StackNavigator";
 import ServiciileNoastre from "../components/ServiciileNoastre";
 import GreyButton from "../components/GreyButton";
 import ServiciiSiPreturi from "../components/ServiciiSiPreturi";
+import { useSelector } from "react-redux";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 const FrizerDetaliiScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
+  //@ts-expect-error
+  const frizer = useSelector((state) => state.frizeri.selectedFrizer);
 
   return (
     <ScrollView>
       <View style={{ flex: 1 }}>
         {/* imaginea frizerului */}
         <Image
-          source={require("../assets/images/OvidiuVirlan.png")}
+          source={frizer.poza}
           style={{
             width: windowWidth,
             height: windowHeight / 2.2,
@@ -35,7 +38,7 @@ const FrizerDetaliiScreen = () => {
             marginTop: 10,
           }}
         >
-          Ovidiu Virlan
+          {frizer.nume}
         </Text>
         {/* Review-uri */}
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -62,10 +65,7 @@ const FrizerDetaliiScreen = () => {
             width: windowWidth - 30,
           }}
         >
-          Dacă sunteți în căutarea unei experiențe de bărbierit și coafat de
-          lux, atunci Ovidiu Vîrlan este alegerea perfectă. El vă va ajuta să vă
-          simțiți și să arătați bine, oferindu-vă o experiență de îngrijire
-          personală de calitate superioară în fiecare vizită.
+          {frizer.descriere}
         </Text>
         {/* Preturi si servicii frizer */}
         <ServiciiSiPreturi />

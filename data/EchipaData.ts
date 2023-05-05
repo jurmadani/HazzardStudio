@@ -1,4 +1,11 @@
-export const Echipa = [
+export interface EchipaProps {
+    id: number;
+    nume: string;
+    poza: any;
+    descriere: string
+}
+
+export const Echipa: EchipaProps[] = [
     {
         id: 1,
         nume: "Ovidiu Virlan",

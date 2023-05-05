@@ -5,18 +5,21 @@ import { ApplicationProvider } from "@ui-kitten/components";
 import { Provider as PaperProvider } from "react-native-paper";
 import { NativeBaseProvider } from "native-base";
 import * as eva from "@eva-design/eva";
-import DrawerNavigator from "./navigator/DrawerNavigator";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 export default function App() {
   return (
-    <PaperProvider>
-      <NativeBaseProvider>
-        <ApplicationProvider {...eva} theme={eva.light}>
-          <NavigationContainer>
-            <StackNavigator />
-          </NavigationContainer>
-        </ApplicationProvider>
-      </NativeBaseProvider>
-    </PaperProvider>
+    <Provider store={store}>
+      <PaperProvider>
+        <NativeBaseProvider>
+          <ApplicationProvider {...eva} theme={eva.light}>
+            <NavigationContainer>
+              <StackNavigator />
+            </NavigationContainer>
+          </ApplicationProvider>
+        </NativeBaseProvider>
+      </PaperProvider>
+    </Provider>
   );
 }

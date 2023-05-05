@@ -7,15 +7,18 @@ import {
   StyleSheet,
 } from "react-native";
 import React from "react";
-import { Echipa } from "../data/EchipaData";
 import { BlurView } from "expo-blur";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StackParams } from "../navigator/StackNavigator";
+import { useSelector, useDispatch } from "react-redux";
+import { frizeriSlice } from "../redux/frizeriSlice";
 
 const EchipaNoastra = () => {
-
   const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
+  //@ts-expect-error
+  const echipa = useSelector((state) => state.frizeri.frizeri);
+  const dispatch = useDispatch();
 
   return (
     <View style={{ alignSelf: "flex-start", marginTop: 20 }}>
@@ -27,9 +30,15 @@ const EchipaNoastra = () => {
         bounces={false}
         scrollEnabled={false}
         numColumns={2}
-        data={Echipa}
+        data={echipa}
         renderItem={(item) => (
-          <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+          <TouchableOpacity
+            onPress={() => {
+              //update selected frizer
+              dispatch(frizeriSlice.actions.setSelectedFrizer(item.item.id));
+              navigation.navigate("Details");
+            }}
+          >
             <View
               style={{
                 height: 180,
