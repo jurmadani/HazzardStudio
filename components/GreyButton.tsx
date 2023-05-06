@@ -9,6 +9,7 @@ interface ButtonProps {
   placeholderSize?: number;
   radius?: number;
   buttonWidth?: number;
+  screenToNavigate?: string;
 }
 
 const GreyButton = ({
@@ -17,13 +18,18 @@ const GreyButton = ({
   placeholderSize,
   radius,
   buttonWidth,
+  screenToNavigate,
 }: ButtonProps) => {
   const windowWidth = Dimensions.get("window").width;
   return (
     <View style={{ marginTop: 25 }}>
       <TouchableOpacity
         style={{ alignItems: "center" }}
-        onPress={() => navigation?.navigate("Drawer")}
+        onPress={() =>
+          screenToNavigate === "Drawer"
+            ? navigation?.navigate("Drawer")
+            : navigation?.navigate("Programare")
+        }
       >
         <View
           style={{

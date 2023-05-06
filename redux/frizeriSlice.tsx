@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Echipa, EchipaProps } from "../data/EchipaData";
+import { Echipa } from "../data/EchipaData";
 
 const initialState = {
   frizeri: Echipa,

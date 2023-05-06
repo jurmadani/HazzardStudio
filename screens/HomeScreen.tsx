@@ -21,7 +21,7 @@ const HomeScreen = () => {
         {/* @ts-expect-error  */}
         <Searchbar
           placeholder="Cauta frizer"
-          style={{ backgroundColor: "#C8C8C8", width: windowWidth - 50 }}
+          style={{ backgroundColor: "#DCDFE3", width: windowWidth - 50 }}
           elevation={2}
         />
         <DiscountCard

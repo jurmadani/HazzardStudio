@@ -76,6 +76,8 @@ const FrizerDetaliiScreen = () => {
             radius={4}
             buttonWidth={windowWidth - 100}
             placeholderSize={17}
+            screenToNavigate="Programare"
+            navigation={navigation}
           />
         </View>
       </View>

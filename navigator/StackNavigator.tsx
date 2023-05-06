@@ -7,6 +7,8 @@ import ForgotPasswordScreen from "../screens/ForgotPasswordScreen";
 import HomeScreen from "../screens/HomeScreen";
 import DrawerNavigator from "./DrawerNavigator";
 import FrizerDetaliiScreen from "../screens/FrizerDetaliiScreen";
+import ProgramareScreen from "../screens/ProgramareScreen";
+import ProgramareHeader from "../components/ProgramareHeader";
 
 export type StackParams = {
   Splashscreen: any;
@@ -16,6 +18,7 @@ export type StackParams = {
   ForgotPassword: any;
   Drawer: any;
   Details: any;
+  Programare: any;
 };
 
 const Stack = createNativeStackNavigator<StackParams>();
@@ -47,6 +50,11 @@ const Stack = createNativeStackNavigator<StackParams>();
         component={ForgotPasswordScreen}
         options={{ headerShown: false }}
       />
+       <Stack.Screen
+        name="Drawer"
+        component={DrawerNavigator}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
 */
 
 const StackNavigator = () => {
@@ -63,6 +71,13 @@ const StackNavigator = () => {
         options={{
           headerTransparent: true,
           headerTitle: "",
+        }}
+      />
+      <Stack.Screen
+        name="Programare"
+        component={ProgramareScreen}
+        options={{
+          header: (navigation) => <ProgramareHeader navigation={navigation} />,
         }}
       />
     </Stack.Navigator>
