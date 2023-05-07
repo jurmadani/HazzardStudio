@@ -5,11 +5,9 @@ import DiscountCard from "../components/DiscountCard";
 import ServiciileNoastre from "../components/ServiciileNoastre";
 import EchipaNoastra from "../components/EchipaNoastra";
 
-
 const windowWidth = Dimensions.get("window").width;
 
 const HomeScreen = () => {
-
   return (
     <ScrollView
       style={{ flex: 1 }}

@@ -55,6 +55,14 @@ const Stack = createNativeStackNavigator<StackParams>();
         component={DrawerNavigator}
         options={{ headerShown: false, gestureEnabled: false }}
       />
+            <Stack.Screen
+        name="Details"
+        component={FrizerDetaliiScreen}
+        options={{
+          headerTransparent: true,
+          headerTitle: "",
+        }}
+      />
 */
 
 const StackNavigator = () => {

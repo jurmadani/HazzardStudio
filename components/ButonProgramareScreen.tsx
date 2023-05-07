@@ -21,11 +21,11 @@ const ButonProgramareScreen = ({ placeholder, onPressHandler }: ButtonProp) => {
         style={{
           width: windowWidth - 70,
           height: 56,
-          backgroundColor: "#CACACA",
+          backgroundColor: "#3B60FB",
           borderRadius: 4,
           alignItems: "center",
           justifyContent: "center",
-          marginTop:30,
+          marginTop: 30,
         }}
       >
         <Text style={{ fontSize: 22, fontWeight: "600", color: "white" }}>

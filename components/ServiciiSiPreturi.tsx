@@ -2,14 +2,26 @@ import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 import React from "react";
 import { Servicii } from "../data/ServiciiData";
 
-const ServiciiSiPreturi = () => {
+interface ServiciiSiPreturiProps {
+  displayHeader?: boolean;
+  selectedServiciuID?: number;
+  setSelectedServiciuID?: React.Dispatch<React.SetStateAction<number>>;
+  addMarginTop?: boolean;
+}
+
+const ServiciiSiPreturi = ({
+  displayHeader,
+  selectedServiciuID,
+  setSelectedServiciuID,
+  addMarginTop,
+}: ServiciiSiPreturiProps) => {
   const columns = 1; // number of columns
   const windowWidth = Dimensions.get("window").width;
 
   return (
-    <View style={{ alignSelf: "flex-start", marginTop: 20 }}>
+    <View style={{ alignSelf: "flex-start", marginTop: addMarginTop ? 20 : 0 }}>
       <Text style={{ fontWeight: "bold", fontSize: 25, marginLeft: 25 }}>
-        Serviciile Noastre
+        {displayHeader ? " Serviciile Noastre" : ""}
       </Text>
 
       <View
@@ -17,7 +29,7 @@ const ServiciiSiPreturi = () => {
           flexDirection: "row",
           flexWrap: "wrap",
           marginLeft: 20,
-          marginTop: 10,
+          marginTop: addMarginTop ? 10 : 0,
           alignItems: "center",
           justifyContent: "space-between",
         }}
@@ -33,10 +45,13 @@ const ServiciiSiPreturi = () => {
             {/* mapam doar primele 2 servicii */}
             {item.id <= 2 && (
               <View>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => setSelectedServiciuID?.(item.id)}
+                >
                   <View
                     style={{
-                      backgroundColor: "#DCDFE3",
+                      backgroundColor:
+                        selectedServiciuID === item.id ? "#3B60FB" : "#DCDFE3",
                       height: 75,
                       width: windowWidth - 60,
                       marginHorizontal: 5,
@@ -54,7 +69,14 @@ const ServiciiSiPreturi = () => {
                       {/* Iconita serviciu */}
                       <Image
                         source={item.Icon}
-                        style={{ height: 40, width: 40, tintColor: "#877547" }}
+                        style={{
+                          height: 40,
+                          width: 40,
+                          tintColor:
+                            selectedServiciuID === item.id
+                              ? "white"
+                              : "#877547",
+                        }}
                       />
                       {/* denumire serviciu */}
                       <View style={{ flexDirection: "column" }}>
@@ -63,12 +85,24 @@ const ServiciiSiPreturi = () => {
                             fontWeight: "bold",
                             fontSize: 20,
                             marginLeft: 15,
+                            color:
+                              selectedServiciuID === item.id
+                                ? "white"
+                                : "black",
                           }}
                         >
                           {item.NumeServiciu}
                         </Text>
                         {/* Durata serviciu */}
-                        <Text style={{ color: "#808080", marginLeft: 15 }}>
+                        <Text
+                          style={{
+                            color:
+                              selectedServiciuID === item.id
+                                ? "white"
+                                : "#808080",
+                            marginLeft: 15,
+                          }}
+                        >
                           45 min
                         </Text>
                       </View>
@@ -81,7 +115,17 @@ const ServiciiSiPreturi = () => {
                           marginRight: 15,
                         }}
                       >
-                        <Text style={{ fontSize: 21 }}>{item.pret} lei</Text>
+                        <Text
+                          style={{
+                            fontSize: 21,
+                            color:
+                              selectedServiciuID === item.id
+                                ? "white"
+                                : "black",
+                          }}
+                        >
+                          {item.pret} lei
+                        </Text>
                       </View>
                     </View>
                   </View>

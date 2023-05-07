@@ -1,10 +1,9 @@
 Change of plans: work with UI libraries, create more designs and work just on UI.
 Don't care about the logic at the moment/backend. We want to finish as fast as possible and try something elements
 
-1)Finish the drawer, make the header contain the header text + description 
-2)Finish the drawer content
-3)finish the homepage
-4)more designs
+1)Create animation + modal cand este gata o programare
+2)Finish drawer screens
+3)more designs
 
 
 
