@@ -17,7 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { StackParams } from "../navigator/StackNavigator";
 
-const SignOutIcon = () => <Icon name="logout" size={25} />;
+const SignOutIcon = () => <Icon name="logout" size={25} color={"#F85656"} />;
 const HomeIcon = () => <Ionicons name="home-outline" size={25} />;
 const SettingsIcon = () => <Ionicons name="settings-outline" size={25} />;
 const ProfileIcon = () => <AntDesign name="user" size={25} />;
@@ -81,7 +81,7 @@ export function DrawerContent(): React.ReactNode {
             label="Programarile mele"
             icon={ProgramareIcon}
             //@ts-expect-error
-            onPress={() => navigation.navigate("Profile")}
+            onPress={() => navigation.navigate("IstoricProgramari")}
           />
           <DrawerItem
             label="Istoric plati"
@@ -96,6 +96,7 @@ export function DrawerContent(): React.ReactNode {
       <Drawer.Section>
         <DrawerItem
           label="Logout"
+          labelStyle={{ color: "#F85656" }}
           icon={SignOutIcon}
           onPress={() => navigation.navigate("Login")}
         />

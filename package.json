@@ -11,6 +11,7 @@
   "dependencies": {
     "@eva-design/eva": "^2.2.0",
     "@react-navigation/drawer": "^6.6.2",
+    "@react-navigation/material-top-tabs": "^6.6.2",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "@reduxjs/toolkit": "^1.9.5",
@@ -33,9 +34,11 @@
     "react-native-step-indicator": "^1.0.3",
     "react-native-svg": "^12.1.1",
     "react-native-swiper": "^1.6.0",
+    "react-native-tab-view": "^3.5.1",
     "react-native-vector-icons": "^9.2.0",
     "react-native-video": "^5.2.1",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "react-native-pager-view": "6.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

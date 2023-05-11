@@ -16,7 +16,7 @@ interface RightArrowIconProp {
   onPressHandler?: () => void;
 }
 
-const SignOutIcon = () => <Icon name="logout" size={25} />;
+const SignOutIcon = () => <Icon name="logout" size={25} color={"#F85656"} />;
 const ProgramareIcon = () => <AntDesign name="calendar" size={25} />;
 const SettingsIcon = () => <Ionicons name="settings-outline" size={25} />;
 const RightArrowIcon = ({ onPressHandler }: RightArrowIconProp) => (
@@ -38,7 +38,7 @@ const SectionListProfile = () => {
           right={(props) => (
             <RightArrowIcon
               //@ts-expect-error
-              onPressHandler={() => navigation.navigate("Payments")}
+              onPressHandler={() => navigation.navigate("IstoricProgramari")}
             />
           )}
         />
@@ -69,6 +69,7 @@ const SectionListProfile = () => {
         <Divider />
         <List.Item
           title="Logout"
+          titleStyle={{ color: "#F85656" }}
           left={SignOutIcon}
           right={(props) => (
             <RightArrowIcon

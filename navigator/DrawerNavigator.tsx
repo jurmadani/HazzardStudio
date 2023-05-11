@@ -5,11 +5,15 @@ import DrawerHeaderHome from "../components/DrawerHeaderHome";
 import ProfileScreen from "../screens/ProfileScreen";
 import DrawerHeaderProfile from "../components/DrawerHeaderProfile";
 import PaymentsScreen from "../screens/PaymentsScreen";
+import IstoricProgramariScreen from "../screens/UpcomingAppointmentScreen";
+import MaterialTopTabNavigator from "./MaterialTopTabNavigator";
+import DrawerHeaderIstoricPlati from "../components/DrawerHeaderIstoricPlati";
 
 export type DrawerParams = {
   Home: any;
   Profile: any;
   Payments: any;
+  IstoricProgramari: any;
 };
 
 const Drawer = createDrawerNavigator<DrawerParams>();
@@ -40,6 +44,16 @@ const DrawerNavigator = () => {
         options={{
           header: (navigation) => (
             <DrawerHeaderProfile navigation={navigation} />
+          ),
+          headerTransparent: true,
+        }}
+      />
+      <Drawer.Screen
+        name="IstoricProgramari"
+        component={MaterialTopTabNavigator}
+        options={{
+          header: (navigation) => (
+            <DrawerHeaderIstoricPlati navigation={navigation} />
           ),
           headerTransparent: true,
         }}
