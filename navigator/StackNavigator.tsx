@@ -10,6 +10,7 @@ import FrizerDetaliiScreen from "../screens/FrizerDetaliiScreen";
 import ProgramareScreen from "../screens/ProgramareScreen";
 import ProgramareHeader from "../components/ProgramareHeader";
 import LoadingPaymentScreen from "../screens/LoadingPaymentScreen";
+import PaymentsScreen from "../screens/PaymentsScreen";
 
 export type StackParams = {
   Splashscreen: any;

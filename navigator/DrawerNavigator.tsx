@@ -4,10 +4,12 @@ import { DrawerContent } from "../components/DrawerContent";
 import DrawerHeaderHome from "../components/DrawerHeaderHome";
 import ProfileScreen from "../screens/ProfileScreen";
 import DrawerHeaderProfile from "../components/DrawerHeaderProfile";
+import PaymentsScreen from "../screens/PaymentsScreen";
 
 export type DrawerParams = {
   Home: any;
   Profile: any;
+  Payments: any;
 };
 
 const Drawer = createDrawerNavigator<DrawerParams>();
@@ -25,6 +27,16 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name="Profile"
         component={ProfileScreen}
+        options={{
+          header: (navigation) => (
+            <DrawerHeaderProfile navigation={navigation} />
+          ),
+          headerTransparent: true,
+        }}
+      />
+      <Drawer.Screen
+        name="Payments"
+        component={PaymentsScreen}
         options={{
           header: (navigation) => (
             <DrawerHeaderProfile navigation={navigation} />

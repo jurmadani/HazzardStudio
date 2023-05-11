@@ -22,6 +22,7 @@ const HomeIcon = () => <Ionicons name="home-outline" size={25} />;
 const SettingsIcon = () => <Ionicons name="settings-outline" size={25} />;
 const ProfileIcon = () => <AntDesign name="user" size={25} />;
 const PaymentMethodIcon = () => <AntDesign name="creditcard" size={25} />;
+const ProgramareIcon = () => <AntDesign name="calendar" size={25} />;
 
 export function DrawerContent(): React.ReactNode {
   const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
@@ -71,21 +72,24 @@ export function DrawerContent(): React.ReactNode {
             onPress={() => navigation.navigate("Home")}
           />
           <DrawerItem
-            label="Profile"
+            label="Profil"
             icon={ProfileIcon}
             //@ts-expect-error
             onPress={() => navigation.navigate("Profile")}
           />
           <DrawerItem
-            label="Payments"
-            icon={PaymentMethodIcon}
-            onPress={() => null}
+            label="Programarile mele"
+            icon={ProgramareIcon}
+            //@ts-expect-error
+            onPress={() => navigation.navigate("Profile")}
           />
           <DrawerItem
-            label="Settings"
-            icon={SettingsIcon}
-            onPress={() => null}
+            label="Istoric plati"
+            icon={PaymentMethodIcon}
+            //@ts-expect-error
+            onPress={() => navigation.navigate("Payments")}
           />
+          <DrawerItem label="Setari" icon={SettingsIcon} onPress={() => null} />
         </Drawer.Section>
       </DrawerContentScrollView>
       {/* Bottom Drawer section */}

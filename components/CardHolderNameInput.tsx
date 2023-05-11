@@ -13,7 +13,7 @@ const CardHolderNameInput = () => {
         height: 60,
         width: "90%",
         justifyContent: "center",
-        marginTop:10,
+        marginTop: 10,
       }}
     >
       <Input

@@ -26,7 +26,6 @@ const DrawerHeaderHome = ({ navigation }: DrawerProps) => {
         alignItems: "center",
       }}
     >
-
       <TouchableOpacity
         onPress={() => navigation.navigation.toggleDrawer()}
         style={{ marginLeft: 20 }}

@@ -373,6 +373,7 @@ const ProgramareScreen = () => {
               navigation.navigate("LoadingPayment", {
                 text: "test",
               })
+              
             }
           />
         </View>
