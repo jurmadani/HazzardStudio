@@ -8,12 +8,14 @@ import PaymentsScreen from "../screens/PaymentsScreen";
 import IstoricProgramariScreen from "../screens/UpcomingAppointmentScreen";
 import MaterialTopTabNavigator from "./MaterialTopTabNavigator";
 import DrawerHeaderIstoricPlati from "../components/DrawerHeaderIstoricPlati";
+import SettingsScreen from "../screens/SettingsScreen";
 
 export type DrawerParams = {
   Home: any;
   Profile: any;
   Payments: any;
   IstoricProgramari: any;
+  Setari: any;
 };
 
 const Drawer = createDrawerNavigator<DrawerParams>();
@@ -53,7 +55,17 @@ const DrawerNavigator = () => {
         component={MaterialTopTabNavigator}
         options={{
           header: (navigation) => (
-            <DrawerHeaderIstoricPlati navigation={navigation} />
+            <DrawerHeaderProfile navigation={navigation} />
+          ),
+          headerTransparent: true,
+        }}
+      />
+      <Drawer.Screen
+        name="Setari"
+        component={SettingsScreen}
+        options={{
+          header: (navigation) => (
+            <DrawerHeaderProfile navigation={navigation} />
           ),
           headerTransparent: true,
         }}

@@ -89,7 +89,12 @@ export function DrawerContent(): React.ReactNode {
             //@ts-expect-error
             onPress={() => navigation.navigate("Payments")}
           />
-          <DrawerItem label="Setari" icon={SettingsIcon} onPress={() => null} />
+          <DrawerItem
+            label="Setari"
+            icon={SettingsIcon}
+            //@ts-expect-error
+            onPress={() => navigation.navigate("Setari")}
+          />
         </Drawer.Section>
       </DrawerContentScrollView>
       {/* Bottom Drawer section */}

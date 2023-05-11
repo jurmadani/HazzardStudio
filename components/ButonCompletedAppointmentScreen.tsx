@@ -25,8 +25,8 @@ const ButonCompletedAppointmentScreen = ({
           borderWidth: BorderColor ? 2 : 0,
           borderColor: BorderColor,
           borderRadius: 5,
-          alignItems:'center',
-          justifyContent:'center',
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Text style={{ color: TextColor }}>{Placeholder}</Text>
