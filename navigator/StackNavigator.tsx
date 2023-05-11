@@ -9,6 +9,7 @@ import DrawerNavigator from "./DrawerNavigator";
 import FrizerDetaliiScreen from "../screens/FrizerDetaliiScreen";
 import ProgramareScreen from "../screens/ProgramareScreen";
 import ProgramareHeader from "../components/ProgramareHeader";
+import LoadingPaymentScreen from "../screens/LoadingPaymentScreen";
 
 export type StackParams = {
   Splashscreen: any;
@@ -19,6 +20,7 @@ export type StackParams = {
   Drawer: any;
   Details: any;
   Programare: any;
+  LoadingPayment: any;
 };
 
 const Stack = createNativeStackNavigator<StackParams>();
@@ -86,6 +88,13 @@ const StackNavigator = () => {
         component={ProgramareScreen}
         options={{
           header: (navigation) => <ProgramareHeader navigation={navigation} />,
+        }}
+      />
+      <Stack.Screen
+        name="LoadingPayment"
+        component={LoadingPaymentScreen}
+        options={{
+          headerShown: false,
         }}
       />
     </Stack.Navigator>

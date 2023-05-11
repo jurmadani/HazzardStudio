@@ -369,7 +369,11 @@ const ProgramareScreen = () => {
           </View>
           <ButonProgramareScreen
             placeholder="Finalizeaza"
-            onPressHandler={() => navigation.navigate("Drawer")}
+            onPressHandler={() =>
+              navigation.navigate("LoadingPayment", {
+                text: "test",
+              })
+            }
           />
         </View>
       </ScrollView>

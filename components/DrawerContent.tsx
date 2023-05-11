@@ -13,6 +13,9 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
 //@ts-expect-error
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { StackParams } from "../navigator/StackNavigator";
 
 const SignOutIcon = () => <Icon name="logout" size={25} />;
 const HomeIcon = () => <Ionicons name="home-outline" size={25} />;
@@ -21,6 +24,8 @@ const ProfileIcon = () => <AntDesign name="user" size={25} />;
 const PaymentMethodIcon = () => <AntDesign name="creditcard" size={25} />;
 
 export function DrawerContent(): React.ReactNode {
+  const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <DrawerContentScrollView>
@@ -59,8 +64,18 @@ export function DrawerContent(): React.ReactNode {
         </View>
         {/* Drawer section with the pages */}
         <Drawer.Section style={{ marginTop: 20 }}>
-          <DrawerItem label="Home" icon={HomeIcon} onPress={() => null} />
-          <DrawerItem label="Profile" icon={ProfileIcon} onPress={() => null} />
+          <DrawerItem
+            label="Home"
+            icon={HomeIcon}
+            //@ts-expect-error
+            onPress={() => navigation.navigate("Home")}
+          />
+          <DrawerItem
+            label="Profile"
+            icon={ProfileIcon}
+            //@ts-expect-error
+            onPress={() => navigation.navigate("Profile")}
+          />
           <DrawerItem
             label="Payments"
             icon={PaymentMethodIcon}
@@ -75,7 +90,11 @@ export function DrawerContent(): React.ReactNode {
       </DrawerContentScrollView>
       {/* Bottom Drawer section */}
       <Drawer.Section>
-        <DrawerItem label="Logout" icon={SignOutIcon} onPress={() => null} />
+        <DrawerItem
+          label="Logout"
+          icon={SignOutIcon}
+          onPress={() => navigation.navigate("Login")}
+        />
       </Drawer.Section>
     </SafeAreaView>
   );

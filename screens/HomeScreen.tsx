@@ -14,7 +14,7 @@ const HomeScreen = () => {
       showsVerticalScrollIndicator={false}
       bounces={false}
     >
-      <SafeAreaView style={{ alignItems: "center" }}>
+      <SafeAreaView style={{ alignItems: "center", }}>
         {/* Search bar pentru frizeri */}
         {/* @ts-expect-error  */}
         <Searchbar

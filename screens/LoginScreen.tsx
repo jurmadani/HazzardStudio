@@ -157,7 +157,7 @@ const LoginScreen = () => {
                 navigation={navigation}
               />
               {/* Login button */}
-              <GreyButton placeholder="Conecteaza-te" navigation={navigation}/>
+              <GreyButton placeholder="Conecteaza-te" navigation={navigation} screenToNavigate="Drawer"/>
               {/* Sau divider */}
               <SauDivider />
               {/* Facebook & Google login view */}

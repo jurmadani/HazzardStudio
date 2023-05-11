@@ -1,9 +1,15 @@
-import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import React from "react";
 import { DrawerHeaderProps } from "@react-navigation/drawer";
-import { DrawerParams } from "../navigator/DrawerNavigator";
 //@ts-expect-error
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { BlurView } from "expo-blur";
 
 const MenuIcon = () => <Ionicons name="menu-outline" size={40} color="black" />;
 
@@ -11,19 +17,30 @@ interface DrawerProps {
   navigation: DrawerHeaderProps;
 }
 
-const DrawerHeader = ({ navigation }: DrawerProps) => {
+const DrawerHeaderHome = ({ navigation }: DrawerProps) => {
   return (
     <SafeAreaView
       style={{
-        margin: 20,
+        marginBottom: 20,
         flexDirection: "row",
         alignItems: "center",
       }}
     >
-      <TouchableOpacity onPress={() => navigation.navigation.toggleDrawer()}>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigation.toggleDrawer()}
+        style={{ marginLeft: 20 }}
+      >
         <MenuIcon />
       </TouchableOpacity>
-      <View style={{ flexDirection: "column", alignSelf: "flex-end", flex: 1 }}>
+      <View
+        style={{
+          flexDirection: "column",
+          alignSelf: "flex-end",
+          flex: 1,
+          marginRight: 20,
+        }}
+      >
         {/* Header text */}
         <Text
           style={{
@@ -52,4 +69,4 @@ const DrawerHeader = ({ navigation }: DrawerProps) => {
   );
 };
 
-export default DrawerHeader;
+export default DrawerHeaderHome;
