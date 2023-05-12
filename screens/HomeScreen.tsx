@@ -19,11 +19,7 @@ const HomeScreen = () => {
 
   const onChangeSearch = (query: string) => setSearchQuery(query);
   return (
-    <ScrollView
-      style={{ flex: 1 }}
-      showsVerticalScrollIndicator={false}
-      bounces={false}
-    >
+    <ScrollView showsVerticalScrollIndicator={false} bounces={false}>
       <SafeAreaView style={{ alignItems: "center" }}>
         {/* Search bar pentru frizeri */}
         {/* @ts-expect-error  */}
@@ -34,7 +30,6 @@ const HomeScreen = () => {
           elevation={2}
         />
         <SearchFilter input={searchQuery} />
-
       </SafeAreaView>
     </ScrollView>
   );

@@ -28,7 +28,7 @@ const SearchFilter = ({ input }: Props) => {
     <View>
       {/* Aratare home screen daca nimic nu este in searcbar */}
       {input === "" && (
-        <SafeAreaView style={{ alignItems: "center" }}>
+        <SafeAreaView style={{ alignItems: "center",}}>
           <DiscountCard
             title="5% pentru clientii noi"
             description="discount valabil doar 2 zile"

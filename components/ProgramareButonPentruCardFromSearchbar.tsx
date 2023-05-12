@@ -12,8 +12,6 @@ interface ButonProp {
 
 const ProgramareButonPentruCardFromSearchbar = ({ id }: ButonProp) => {
   const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
-  //@ts-expect-error
-  const echipa = useSelector((state) => state.frizeri.frizeri);
   const dispatch = useDispatch();
   return (
     <TouchableOpacity

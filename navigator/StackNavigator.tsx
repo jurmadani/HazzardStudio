@@ -72,6 +72,32 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="Splashscreen"
+        component={SplashScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="Login"
+        //@ts-expect-error
+        component={LoginScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ForgotPassword"
+        component={ForgotPasswordScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="Drawer"
         component={DrawerNavigator}
         options={{ headerShown: false, gestureEnabled: false }}
@@ -96,7 +122,7 @@ const StackNavigator = () => {
         component={LoadingPaymentScreen}
         options={{
           headerShown: false,
-          gestureEnabled:false,
+          gestureEnabled: false,
         }}
       />
     </Stack.Navigator>
