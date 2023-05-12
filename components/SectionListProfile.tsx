@@ -62,7 +62,7 @@ const SectionListProfile = () => {
             <RightArrowIcon
               //@ts-expect-error
 
-              onPressHandler={() => navigation.navigate("Payments")}
+              onPressHandler={() => navigation.navigate("Setari")}
             />
           )}
         />
@@ -73,9 +73,7 @@ const SectionListProfile = () => {
           left={SignOutIcon}
           right={(props) => (
             <RightArrowIcon
-              //@ts-expect-error
-
-              onPressHandler={() => navigation.navigate("Payments")}
+              onPressHandler={() => navigation.navigate("Login")}
             />
           )}
         />

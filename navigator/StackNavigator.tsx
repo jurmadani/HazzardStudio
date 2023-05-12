@@ -96,6 +96,7 @@ const StackNavigator = () => {
         component={LoadingPaymentScreen}
         options={{
           headerShown: false,
+          gestureEnabled:false,
         }}
       />
     </Stack.Navigator>
