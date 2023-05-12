@@ -41,11 +41,12 @@ Jurma Daniel
 
 # Screnshots
 
-<img src="/github-assets/ss13.jpg" align="left" width="200" hspace="10" vspace="10" style="margin-right: 10px;">
-<img src="/github-assets/ss18.jpg" align="left" width="200" hspace="10" vspace="10" style="margin-right: 10px;">
-<img src="/github-assets/ss2.jpg" align="left" width="200" hspace="10" vspace="10" style="margin-right: 10px;">
-<img src="/github-assets/ss3.jpg" width="200" style="margin-top: 10px;">
-<img src="/github-assets/ss7.jpg" width="200" style="margin-top: 10px;">
+<img src="/github-assets/ss13.jpg" align="left"
+width="200" hspace="10" vspace="10"><img src="/github-assets/ss18.jpg" align="left"
+width="200" hspace="10" vspace="10"><img src="/github-assets/ss2.jpg" align="left"
+width="200" hspace="10" vspace="10"><img src="/github-assets/ss3.jpg"
+width="200"><img src="/github-assets/ss7.jpg"
+width="200">
 
 
 
